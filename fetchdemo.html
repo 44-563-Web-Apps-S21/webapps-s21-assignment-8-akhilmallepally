@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fetch page</title>
+  
+</head>
+<body>
+  <header>Akhil Kumar Reddy Mallepally computes</header>
+  <input id="number1" type="number">
+  <input id="number2" type="number">
+  
+  <button type="button"
+  class="btn btn-primary"
+  onclick="remoteCompute()">
+  Remote compute</button>
+
+  <div id="div"></div>
+
+  <script> 
+    
+    function remoteCompute(){
+    
+    fetch(`http://127.0.0.1:3001/?x=${document.getElementById('number1').value}&y=${document.getElementById('number2').value}`).then(
+   (resp) => { return resp.text()}).then ((text) => { 
+            console.log(text)
+            document.getElementById("div").innerHTML = (text);
+       }).catch(document.getElementById("div").innerHTML = "ERROR");
+
+}
+  
+  
+  </script>
+
+</body>
+</html>
