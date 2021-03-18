@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>work on arrays</title>
+  
+</head>
+<body onload=compute()>
+  <header>Akhil Kumar Reddy Mallepally  generates </header>
+  <div id="div"></div>
+  
+  <script>
+    function compute(){
+      fetch(`http://127.0.0.1:3001/}`).then(
+      (resp) => { return resp.text()}).then ((text) => { 
+                console.log(text)
+                document.getElementById("div").innerHTML = (text);
+          }).catch(document.getElementById("div").innerHTML = "ERROR");    
+    
+    }
+  </script> 
+
+</body>
+</html>
